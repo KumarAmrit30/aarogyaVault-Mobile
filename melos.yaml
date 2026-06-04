@@ -1,0 +1,14 @@
+name: aarogya_vault
+
+packages:
+  - apps/**
+  - packages/**
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+
+scripts:
+  analyze:
+    run: flutter analyze .
+    description: Run analyzer

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "765614697079",
+    "project_id": "aarogya-vault-dev",
+    "storage_bucket": "aarogya-vault-dev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765614697079:android:7937561153359d774a7472",
+        "android_client_info": {
+          "package_name": "com.aarogyavault.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd--ebL-nU85il-K6t43vzRUsabHBaCaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765614697079:android:6cf2ee8855743c784a7472",
+        "android_client_info": {
+          "package_name": "com.example.mobile_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd--ebL-nU85il-K6t43vzRUsabHBaCaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
