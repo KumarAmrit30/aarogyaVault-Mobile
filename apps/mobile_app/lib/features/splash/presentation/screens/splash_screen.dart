@@ -1,41 +1,34 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mobile_app/features/auth/application/auth_bootstrap_provider.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends ConsumerWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  Timer? _timer;
-
-  @override
-  void initState() {
-    super.initState();
-    _timer = Timer(const Duration(seconds: 2), () {
-      if (mounted) {
-        context.go('/login');
-      }
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen(authBootstrapProvider, (previous, next) {
+      next.whenData((isAuthenticated) {
+        if (!context.mounted) {
+          return;
+        }
+        if (isAuthenticated) {
+          context.go('/dashboard');
+        } else {
+          context.go('/login');
+        }
+      });
     });
-  }
 
-  @override
-  void dispose() {
-    _timer?.cancel();
-    super.dispose();
-  }
+    final authBootstrap = ref.watch(authBootstrapProvider);
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text(
-          'Aarogya Vault',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        child: authBootstrap.when(
+          loading: () => const CircularProgressIndicator(),
+          error: (_, _) => const CircularProgressIndicator(),
+          data: (_) => const CircularProgressIndicator(),
         ),
       ),
     );

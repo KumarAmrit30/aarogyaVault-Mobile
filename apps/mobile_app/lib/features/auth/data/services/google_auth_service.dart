@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:mobile_app/core/constants/app_constants.dart';
 import 'package:mobile_app/core/errors/app_exception.dart';
 import 'package:mobile_app/features/auth/domain/services/auth_service.dart';
 
@@ -15,7 +16,9 @@ class GoogleAuthService implements AuthService {
 
   Future<void> _ensureInitialized() async {
     if (!_initialized) {
-      await _googleSignIn.initialize();
+      await _googleSignIn.initialize(
+        serverClientId: AppConstants.googleWebClientId,
+      );
       _initialized = true;
     }
   }
