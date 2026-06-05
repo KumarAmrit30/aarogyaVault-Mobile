@@ -80,7 +80,7 @@ if (form) {
     } catch (err) {
       console.error("Waitlist submission failed:", err);
       showMessage(
-        "Something went wrong. Please try again or email hello@aarogyavault.live.",
+        "Something went wrong. Please try again or email amrit@aarogyavault.live.",
         "error"
       );
     } finally {
