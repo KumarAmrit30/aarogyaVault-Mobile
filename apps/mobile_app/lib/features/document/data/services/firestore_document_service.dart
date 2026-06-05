@@ -29,7 +29,8 @@ class FirestoreDocumentService implements DocumentService {
     }
 
     final documentId = DateTime.now().millisecondsSinceEpoch.toString();
-    final storagePath = 'documents/${authUser.id}/$documentId';
+    final extension = _fileExtension(file);
+    final storagePath = 'documents/${authUser.id}/$documentId.$extension';
 
     final downloadUrl = await _storageService.uploadFile(
       file: file,
@@ -61,5 +62,14 @@ class FirestoreDocumentService implements DocumentService {
 
     await _storageService.deleteFile(document.storagePath);
     await _documentRepository.deleteDocument(documentId);
+  }
+
+  String _fileExtension(File file) {
+    final fileName = file.path.split(Platform.pathSeparator).last;
+    final dotIndex = fileName.lastIndexOf('.');
+    if (dotIndex == -1 || dotIndex == fileName.length - 1) {
+      return 'bin';
+    }
+    return fileName.substring(dotIndex + 1).toLowerCase();
   }
 }
