@@ -1,0 +1,69 @@
+{
+  "hosting": {
+    "public": "website/public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "headers": [
+      {
+        "source": "**/*.@(css|js|svg|ico|woff2)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/privacy",
+        "destination": "/privacy/index.html"
+      },
+      {
+        "source": "/terms",
+        "destination": "/terms/index.html"
+      }
+    ]
+  },
+  "functions": {
+    "source": "backend/functions"
+  },
+  "firestore": {
+    "rules": "apps/mobile_app/firestore.rules",
+    "indexes": "apps/mobile_app/firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "apps/mobile_app/storage.rules"
+  }
+}

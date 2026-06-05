@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aarogya Vault — AI Healthcare Startup | Medical OCR &amp; Healthcare Document Management</title>
+  <meta name="description" content="Aarogya Vault is an AI healthcare startup building a secure document vault for India. Upload medical reports, run Gemini AI medical OCR, and get patient-friendly summaries — powered by Google Cloud &amp; Firebase.">
+  <meta name="keywords" content="AI Healthcare Startup, Medical OCR, Healthcare Document Management, Gemini AI, Medical Records, Health Document Management, Healthcare AI, Digital Health India, Firebase Healthcare, Google Cloud Healthcare">
+  <meta name="author" content="Aarogya Vault">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aarogyavault.live/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aarogyavault.live/">
+  <meta property="og:title" content="Aarogya Vault — AI Healthcare Startup | Gemini AI Medical OCR">
+  <meta property="og:description" content="Bootstrapped AI healthcare startup. Working MVP with Google Sign-In, Firebase document storage, Cloud Functions, and Gemini 2.5 Flash medical OCR.">
+  <meta property="og:site_name" content="Aarogya Vault">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aarogya Vault — AI Healthcare Startup">
+  <meta name="twitter:description" content="Healthcare document management with Gemini AI medical OCR. Built on Google Cloud, Firebase, and Flutter. MVP live today.">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aarogya Vault",
+    "url": "https://aarogyavault.live",
+    "logo": "https://aarogyavault.live/favicon.svg",
+    "description": "AI healthcare startup building secure healthcare document management with Gemini AI medical OCR, powered by Google Cloud and Firebase.",
+    "foundingDate": "2025",
+    "foundingLocation": "India",
+    "founder": {
+      "@type": "Person",
+      "name": "Amrit Kumar",
+      "jobTitle": "Founder"
+    },
+    "knowsAbout": ["AI Healthcare", "Medical OCR", "Healthcare Document Management", "Gemini AI", "Digital Health"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@aarogyavault.live",
+      "contactType": "customer support"
+    },
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Aarogya Vault",
+    "url": "https://aarogyavault.live",
+    "description": "AI Healthcare Startup — healthcare document management platform with Gemini AI medical OCR for the Indian market.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://aarogyavault.live/#waitlist"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Aarogya Vault",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Android",
+    "description": "Healthcare document management app with Gemini AI medical OCR, Firebase cloud storage, and AI-generated medical report summaries.",
+    "featureList": "Google Sign-In, PDF and image upload, Gemini 2.5 Flash OCR, AI summaries, Firebase Cloud Storage",
+    "softwareVersion": "0.1.0-mvp",
+    "author": {
+      "@type": "Organization",
+      "name": "Aarogya Vault"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/PreOrder"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="sr-only">Skip to main content</a>
+
+  <header class="nav" id="nav" role="banner">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="Aarogya Vault home">
+        <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect width="36" height="36" rx="10" fill="#0D9488"/>
+          <path d="M18 10v16M12 16h12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        Aarogya Vault
+      </a>
+      <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+        <a href="#mvp-status">MVP</a>
+        <a href="#product">Product</a>
+        <a href="#gemini">Gemini AI</a>
+        <a href="#platform">Platform</a>
+        <a href="#founder">About</a>
+        <a href="#waitlist">Waitlist</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#demo" class="btn btn-secondary">Watch Demo</a>
+        <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-content fade-in">
+          <div class="hero-badge">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            AI Healthcare Startup · MVP Live on Google Cloud
+          </div>
+          <h1 id="hero-heading">Your Medical Records. Organized. Secure. Understood.</h1>
+          <p class="hero-subtitle">A working healthcare document management platform for India — upload PDFs and images, extract text with Gemini AI medical OCR, and receive AI-generated summaries. Built on Firebase and Google Cloud.</p>
+          <div class="hero-actions">
+            <a href="#waitlist" class="btn btn-primary btn-lg">Join Waitlist</a>
+            <a href="#product" class="btn btn-secondary btn-lg">View Product</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Firebase Cloud Storage
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+              Gemini 2.5 Flash
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              Medical OCR Pipeline
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual fade-in">
+          <svg class="hero-illustration" viewBox="0 0 560 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Healthcare document vault illustration">
+            <rect x="40" y="60" width="480" height="360" rx="24" fill="#fff" stroke="#E2E8F0" stroke-width="2"/>
+            <rect x="40" y="60" width="480" height="56" rx="24" fill="#F8FAFC"/>
+            <rect x="40" y="92" width="480" height="24" fill="#F8FAFC"/>
+            <circle cx="72" cy="88" r="8" fill="#EF4444"/><circle cx="96" cy="88" r="8" fill="#F59E0B"/><circle cx="120" cy="88" r="8" fill="#10B981"/>
+            <rect x="80" y="140" width="180" height="240" rx="12" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1.5"/>
+            <rect x="100" y="168" width="80" height="8" rx="4" fill="#0D9488" opacity="0.6"/>
+            <rect x="100" y="188" width="140" height="6" rx="3" fill="#CBD5E1"/>
+            <rect x="100" y="204" width="120" height="6" rx="3" fill="#CBD5E1"/>
+            <rect x="100" y="220" width="130" height="6" rx="3" fill="#CBD5E1"/>
+            <rect x="100" y="248" width="140" height="48" rx="8" fill="#fff" stroke="#E2E8F0"/>
+            <rect x="112" y="260" width="60" height="6" rx="3" fill="#6366F1" opacity="0.5"/>
+            <rect x="112" y="274" width="100" height="5" rx="2.5" fill="#CBD5E1"/>
+            <rect x="112" y="286" width="80" height="5" rx="2.5" fill="#CBD5E1"/>
+            <rect x="300" y="140" width="180" height="100" rx="12" fill="#fff" stroke="#E2E8F0"/>
+            <path d="M320 180h140M320 200h100M320 220h120" stroke="#E2E8F0" stroke-width="6" stroke-linecap="round"/>
+            <rect x="300" y="260" width="180" height="120" rx="12" fill="url(#grad1)"/>
+            <defs><linearGradient id="grad1" x1="300" y1="260" x2="480" y2="380"><stop stop-color="#0D9488"/><stop offset="1" stop-color="#6366F1"/></linearGradient></defs>
+            <text x="320" y="300" fill="#fff" font-family="Inter,sans-serif" font-size="13" font-weight="600">AI Summary</text>
+            <rect x="320" y="312" width="140" height="5" rx="2.5" fill="#fff" opacity="0.7"/>
+            <rect x="320" y="326" width="120" height="5" rx="2.5" fill="#fff" opacity="0.5"/>
+            <rect x="320" y="340" width="130" height="5" rx="2.5" fill="#fff" opacity="0.5"/>
+            <rect x="320" y="354" width="100" height="5" rx="2.5" fill="#fff" opacity="0.4"/>
+            <circle cx="280" cy="320" r="36" fill="#0D9488" opacity="0.1"/>
+            <path d="M268 320l8 8 16-16" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="180" y="400" width="200" height="40" rx="20" fill="#0D9488"/>
+            <text x="280" y="426" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="600">Upload Document</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credibility Bar -->
+    <section class="credibility-bar" aria-label="Company facts">
+      <div class="container credibility-grid fade-in">
+        <div class="credibility-item">
+          <span class="credibility-value">MVP Shipped</span>
+          <span class="credibility-label">Working Android app in production</span>
+        </div>
+        <div class="credibility-item">
+          <span class="credibility-value">Gemini 2.5 Flash</span>
+          <span class="credibility-label">Medical OCR &amp; summary generation</span>
+        </div>
+        <div class="credibility-item">
+          <span class="credibility-value">6 Google Services</span>
+          <span class="credibility-label">Auth, Storage, Firestore, Functions, Hosting, AI</span>
+        </div>
+        <div class="credibility-item">
+          <span class="credibility-value">India · 2025</span>
+          <span class="credibility-label">Bootstrapped, founder-led startup</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Maturity Timeline -->
+    <section class="maturity" id="maturity" aria-labelledby="maturity-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Product Maturity</span>
+          <h2 id="maturity-heading" class="section-title">From MVP to public launch</h2>
+          <p class="section-subtitle">A clear, staged rollout — not a concept deck. The core pipeline is built and running on Google Cloud today.</p>
+        </div>
+        <div class="maturity-track fade-in">
+          <article class="maturity-stage complete">
+            <div class="maturity-dot" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>MVP Available</h3>
+            <p>Flutter Android app, document upload, Cloud Function OCR pipeline, and Firestore-backed document library are live and functional.</p>
+            <span class="maturity-badge live">Current Stage</span>
+          </article>
+          <article class="maturity-stage active">
+            <div class="maturity-dot" aria-hidden="true"></div>
+            <h3>Beta Testing</h3>
+            <p>Onboarding early users from the waitlist. Refining OCR accuracy, in-app summary viewer, and upload experience based on real medical documents.</p>
+            <span class="maturity-badge next">Q3 2026</span>
+          </article>
+          <article class="maturity-stage">
+            <div class="maturity-dot" aria-hidden="true"></div>
+            <h3>Public Launch</h3>
+            <p>Google Play release, expanded document types, and production-scale infrastructure on Google Cloud for nationwide availability in India.</p>
+            <span class="maturity-badge future">Q4 2026</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section problem" id="problem" aria-labelledby="problem-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">The Problem</span>
+          <h2 id="problem-heading" class="section-title">Healthcare records are broken for patients</h2>
+          <p class="section-subtitle">In India, patients receive lab reports, prescriptions, and discharge summaries across disconnected hospitals and diagnostic chains — with no unified way to store or understand them.</p>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-visual fade-in">
+            <div class="problem-card">
+              <div class="problem-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M13 2v7h7"/></svg>
+              </div>
+              <h3>Scattered Reports</h3>
+              <p>Lab results, prescriptions, and scans live in different places — paper folders, email attachments, hospital portals.</p>
+            </div>
+            <div class="problem-card">
+              <div class="problem-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <h3>Confusing Terminology</h3>
+              <p>Medical jargon makes it hard to understand what reports actually mean for your health.</p>
+            </div>
+            <div class="problem-card">
+              <div class="problem-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <h3>Lost Documents</h3>
+              <p>Critical records get misplaced when you need them most — during emergencies or specialist visits.</p>
+            </div>
+            <div class="problem-card">
+              <div class="problem-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <h3>Fragmented History</h3>
+              <p>Your complete health story is never in one place, making continuity of care difficult.</p>
+            </div>
+          </div>
+          <ul class="problem-list fade-in" aria-label="Patient challenges">
+            <li>
+              <span class="problem-list-icon" aria-hidden="true">1</span>
+              <div><strong>Reports are scattered</strong> across hospitals, diagnostic labs, and physical files with no single source of truth.</div>
+            </li>
+            <li>
+              <span class="problem-list-icon" aria-hidden="true">2</span>
+              <div><strong>Medical terminology is confusing</strong> — patients can't interpret CBC panels, radiology reports, or pathology findings.</div>
+            </li>
+            <li>
+              <span class="problem-list-icon" aria-hidden="true">3</span>
+              <div><strong>Documents are lost</strong> when switching doctors, moving cities, or during family medical emergencies.</div>
+            </li>
+            <li>
+              <span class="problem-list-icon" aria-hidden="true">4</span>
+              <div><strong>Healthcare history becomes fragmented</strong>, leading to repeated tests and incomplete clinical context.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="section" id="solution" aria-labelledby="solution-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">The Solution</span>
+          <h2 id="solution-heading" class="section-title">One vault for your entire health story</h2>
+          <p class="section-subtitle">Aarogya Vault connects a Flutter mobile client to a Firebase backend and Gemini AI pipeline — giving individuals a single place to store and understand their medical documents.</p>
+        </div>
+        <div class="solution-grid">
+          <article class="solution-card fade-in">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Secure Storage</h3>
+            <p>Cloud-backed vault for prescriptions, lab reports, imaging, and diagnostic PDFs.</p>
+          </article>
+          <article class="solution-card fade-in">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+            </div>
+            <h3>OCR Extraction</h3>
+            <p>Automatically extract text from uploaded PDFs and medical images.</p>
+          </article>
+          <article class="solution-card fade-in">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h3>AI Summaries</h3>
+            <p>Patient-friendly explanations of complex medical reports powered by Gemini AI.</p>
+          </article>
+          <article class="solution-card fade-in">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <h3>Document Vault</h3>
+            <p>Organized library for all your healthcare documents in one secure place.</p>
+          </article>
+          <article class="solution-card fade-in">
+            <div class="solution-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Persistent Record Access</h3>
+            <p>Documents and OCR results stored in your personal Firestore-backed vault — accessible across sessions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current MVP Status -->
+    <section class="section mvp-status" id="mvp-status" aria-labelledby="mvp-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Current MVP Status</span>
+          <h2 id="mvp-heading" class="section-title">What's working in production today</h2>
+          <p class="section-subtitle">Every item below maps to shipped code in our Flutter app and Firebase Cloud Functions — not a roadmap slide.</p>
+        </div>
+        <div class="mvp-grid fade-in">
+          <div class="mvp-shipped">
+            <article class="mvp-item shipped">
+              <div class="mvp-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div>
+                <strong>Google Sign-In Authentication</strong>
+                <span>Firebase Auth with Google OAuth — users sign in and access only their own data via Firestore security rules.</span>
+              </div>
+            </article>
+            <article class="mvp-item shipped">
+              <div class="mvp-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div>
+                <strong>Document Upload (PDF, JPEG, PNG)</strong>
+                <span>Flutter file picker supports prescriptions, lab reports, discharge summaries, and more — up to 10 MB per file, stored in Firebase Cloud Storage.</span>
+              </div>
+            </article>
+            <article class="mvp-item shipped">
+              <div class="mvp-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div>
+                <strong>Automated Medical OCR Pipeline</strong>
+                <span>Firebase Cloud Function triggers on every upload, downloads the file, and sends it to Gemini 2.5 Flash for text extraction and summary generation.</span>
+              </div>
+            </article>
+            <article class="mvp-item shipped">
+              <div class="mvp-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div>
+                <strong>Firestore Document Library</strong>
+                <span>Uploaded documents are indexed in Firestore with metadata — file name, document type, storage path, and timestamps. Users can view and delete records.</span>
+              </div>
+            </article>
+            <article class="mvp-item shipped">
+              <div class="mvp-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div>
+                <strong>AI Summary Storage</strong>
+                <span>OCR results — extracted text and Gemini-generated summaries — are persisted in Firestore <code>ocr_results</code> collection, ready for in-app display.</span>
+              </div>
+            </article>
+            <article class="mvp-item in-progress">
+              <div class="mvp-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div>
+                <strong>In-App Summary Viewer</strong>
+                <span>OCR data layer is built; dedicated document detail screen with AI summary display is in active development for beta release.</span>
+              </div>
+            </article>
+          </div>
+          <aside class="mvp-meta">
+            <h3>Technical stack in production</h3>
+            <ul class="mvp-meta-list">
+              <li>Flutter mobile app (Android)</li>
+              <li>Firebase Authentication</li>
+              <li>Cloud Firestore + Security Rules</li>
+              <li>Firebase Cloud Storage</li>
+              <li>Cloud Functions (Node.js, v2)</li>
+              <li>Google Gemini 2.5 Flash API</li>
+              <li>Firebase Hosting (this website)</li>
+            </ul>
+            <div class="mvp-stack">
+              <span class="mvp-stack-tag">Flutter</span>
+              <span class="mvp-stack-tag">Riverpod</span>
+              <span class="mvp-stack-tag">GoRouter</span>
+              <span class="mvp-stack-tag">Firebase</span>
+              <span class="mvp-stack-tag">Gemini AI</span>
+              <span class="mvp-stack-tag">Google Cloud</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section features" id="features" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Features</span>
+          <h2 id="features-heading" class="section-title">Healthcare document management, end to end</h2>
+          <p class="section-subtitle">Core capabilities shipping in the MVP — with a clear roadmap for what comes next.</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card fade-in">
+            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div>
+            <h3>Secure Cloud Storage</h3>
+            <p>Documents stored in Firebase Cloud Storage with TLS in transit. Files scoped per-user via storage path conventions and security rules.</p>
+          </article>
+          <article class="feature-card fade-in">
+            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></div>
+            <h3>AI-Powered Medical OCR</h3>
+            <p>Gemini 2.5 Flash extracts text from uploaded PDFs and images via a Cloud Function — no manual data entry required.</p>
+          </article>
+          <article class="feature-card fade-in">
+            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <h3>Medical Report Summaries</h3>
+            <p>Gemini AI generates concise, patient-readable summaries from extracted report text — informational only, not medical advice.</p>
+          </article>
+          <article class="feature-card roadmap fade-in">
+            <span class="feature-badge">Roadmap</span>
+            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+            <h3>Smart Search</h3>
+            <p>Search across document names, types, and OCR-extracted content — planned for beta release.</p>
+          </article>
+          <article class="feature-card roadmap fade-in">
+            <span class="feature-badge">Roadmap</span>
+            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <h3>Health Timeline</h3>
+            <p>Visual chronological view of your medical history — coming in a future release.</p>
+          </article>
+          <article class="feature-card roadmap fade-in">
+            <span class="feature-badge">Roadmap</span>
+            <div class="feature-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <h3>Family Vault</h3>
+            <p>Manage health records for family members from a single account — planned for Phase 3.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" id="how-it-works" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">How It Works</span>
+          <h2 id="how-heading" class="section-title">From upload to understanding in minutes</h2>
+          <p class="section-subtitle">The exact pipeline running in our Cloud Function today — from Flutter upload to Gemini AI output.</p>
+        </div>
+        <div class="timeline fade-in">
+          <div class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">1</div>
+            <div class="timeline-content">
+              <h3>Upload Report</h3>
+              <p>User signs in via Google OAuth, selects a document type (prescription, lab report, discharge summary, etc.), and uploads a PDF or image through the Flutter app.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">2</div>
+            <div class="timeline-content">
+              <h3>Cloud Storage Trigger</h3>
+              <p>File lands in Firebase Cloud Storage at <code>documents/{userId}/{documentId}</code>. A Cloud Function (<code>onDocumentUploaded</code>) fires automatically on finalize.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">3</div>
+            <div class="timeline-content">
+              <h3>Gemini Medical OCR</h3>
+              <p>The function downloads the file and sends it to Gemini 2.5 Flash with a structured prompt to extract medical text and preserve terminology.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">4</div>
+            <div class="timeline-content">
+              <h3>AI Summary Generation</h3>
+              <p>Gemini returns structured JSON with <code>extractedText</code> and <code>summary</code> fields, stored in Firestore <code>ocr_results</code> for the user to access.</p>
+            </div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-marker" aria-hidden="true">5</div>
+            <div class="timeline-content">
+              <h3>Secure Access Anytime</h3>
+              <p>Document metadata and OCR results are protected by Firestore security rules — only the authenticated owner can read their records.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Video -->
+    <section class="section demo-video" id="demo" aria-labelledby="demo-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Product Demo</span>
+          <h2 id="demo-heading" class="section-title">See Aarogya Vault in action</h2>
+          <p class="section-subtitle">A walkthrough of the live MVP — upload, OCR processing, and AI summary generation on Google Cloud.</p>
+        </div>
+        <div class="demo-container fade-in">
+          <div class="demo-placeholder" role="img" aria-label="Product demo video placeholder — video coming soon">
+            <div class="demo-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <span class="demo-label">Product Demo Video</span>
+            <span class="demo-sublabel">Full walkthrough video coming soon. Replace this placeholder with an embedded YouTube or Loom recording of the live MVP.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Screenshots -->
+    <section class="section" id="product" aria-labelledby="product-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Product</span>
+          <h2 id="product-heading" class="section-title">Designed for clarity on every screen</h2>
+          <p class="section-subtitle">Flutter Android app with document library, upload flow, and AI summary view — screenshots from the live build coming soon.</p>
+        </div>
+        <div class="screenshots-grid fade-in">
+          <div class="phone-mockup">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="phone-notch" aria-hidden="true"></div>
+                <div class="phone-ui">
+                  <div class="phone-header">
+                    <div class="phone-avatar" aria-hidden="true"></div>
+                    <div class="phone-header-text">
+                      <div class="line" aria-hidden="true"></div>
+                      <div class="line short" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                  <div class="phone-card">
+                    <div class="phone-card-title" aria-hidden="true"></div>
+                    <div class="phone-card-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+                  </div>
+                  <div class="phone-card">
+                    <div class="phone-card-title" aria-hidden="true"></div>
+                    <div class="phone-card-lines"><div class="line"></div><div class="line"></div></div>
+                  </div>
+                  <div class="phone-card accent">
+                    <div class="phone-card-title" aria-hidden="true"></div>
+                    <div class="phone-card-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="phone-label">Document Library</p>
+          </div>
+          <div class="phone-mockup">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="phone-notch" aria-hidden="true"></div>
+                <div class="phone-ui">
+                  <div class="phone-header">
+                    <div class="phone-avatar" aria-hidden="true"></div>
+                    <div class="phone-header-text">
+                      <div class="line" aria-hidden="true"></div>
+                      <div class="line short" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                  <div class="phone-card accent" style="flex:1">
+                    <div class="phone-card-title" aria-hidden="true"></div>
+                    <div class="phone-card-lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+                  </div>
+                  <div class="phone-card">
+                    <div class="phone-card-title" aria-hidden="true"></div>
+                    <div class="phone-card-lines"><div class="line"></div><div class="line"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="phone-label">AI Summary View</p>
+          </div>
+          <div class="phone-mockup">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="phone-notch" aria-hidden="true"></div>
+                <div class="phone-ui">
+                  <div class="phone-header">
+                    <div class="phone-avatar" aria-hidden="true"></div>
+                    <div class="phone-header-text">
+                      <div class="line" aria-hidden="true"></div>
+                      <div class="line short" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                  <div class="phone-card">
+                    <div class="phone-card-title" aria-hidden="true"></div>
+                    <div class="phone-card-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+                  </div>
+                  <div class="phone-card" style="border-style:dashed">
+                    <div class="phone-card-title" style="width:50%;opacity:0.3" aria-hidden="true"></div>
+                    <div class="phone-card-lines"><div class="line" style="opacity:0.4"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="phone-label">Upload Flow</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Powered by Gemini AI -->
+    <section class="section gemini-section" id="gemini" aria-labelledby="gemini-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">AI Layer</span>
+          <h2 id="gemini-heading" class="section-title">Powered by Gemini AI</h2>
+          <p class="section-subtitle">Medical OCR and summary generation run on Google's Gemini 2.5 Flash model — integrated directly into our Cloud Functions backend.</p>
+        </div>
+        <div class="gemini-grid fade-in">
+          <div>
+            <div class="gemini-brand">
+              <div class="gemini-logo" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7l2-7z" fill="#fff" opacity="0.9"/></svg>
+              </div>
+              <div class="gemini-brand-text">
+                <h3>Google Gemini 2.5 Flash</h3>
+                <p>Multimodal AI · Medical document processing</p>
+              </div>
+            </div>
+            <p class="gemini-description">When a user uploads a medical document, our <code>onDocumentUploaded</code> Cloud Function sends the file to Gemini with a purpose-built OCR prompt. The model returns structured JSON containing the full extracted text and a concise medical summary — both stored in Firestore for retrieval.</p>
+            <p class="gemini-description">This is not a wrapper around a chatbot. It is a dedicated medical OCR pipeline designed for prescriptions, lab reports, diagnostic PDFs, and medical images — the document types Indian patients handle every day.</p>
+          </div>
+          <div class="gemini-pipeline">
+            <div class="gemini-step">
+              <span class="gemini-step-num">1</span>
+              <div>
+                <h4>Document Ingestion</h4>
+                <p>Cloud Function downloads the uploaded PDF or image from Firebase Cloud Storage.</p>
+              </div>
+            </div>
+            <div class="gemini-step">
+              <span class="gemini-step-num">2</span>
+              <div>
+                <h4>Gemini Multimodal OCR</h4>
+                <p>File sent to Gemini 2.5 Flash with a structured prompt to extract medical text while preserving terminology and values.</p>
+              </div>
+            </div>
+            <div class="gemini-step">
+              <span class="gemini-step-num">3</span>
+              <div>
+                <h4>Summary Generation</h4>
+                <p>Gemini produces a patient-readable summary alongside the raw extracted text in a single API call.</p>
+              </div>
+            </div>
+            <div class="gemini-step">
+              <span class="gemini-step-num">4</span>
+              <div>
+                <h4>Firestore Persistence</h4>
+                <p>Results saved to <code>ocr_results/{documentId}</code> — linked to the user's document record for in-app access.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="gemini-disclaimer fade-in">AI-generated summaries are informational only and do not constitute medical advice, diagnosis, or treatment. Aarogya Vault is not a medical device and makes no regulatory compliance claims.</p>
+      </div>
+    </section>
+
+    <!-- Built on Google Cloud & Firebase -->
+    <section class="section gcp-section" id="platform" aria-labelledby="platform-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Infrastructure</span>
+          <h2 id="platform-heading" class="section-title">Built on Google Cloud &amp; Firebase</h2>
+          <p class="section-subtitle">Every layer of Aarogya Vault runs on Google infrastructure — from mobile auth to serverless OCR to this website.</p>
+        </div>
+        <div class="gcp-architecture fade-in">
+          <div class="gcp-layer">
+            <p class="gcp-layer-label">Client Layer</p>
+            <div class="gcp-services">
+              <div class="gcp-service">
+                <div class="gcp-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 40 40"><path d="M8 32L20 6l12 26H8z" fill="#54C5F8"/></svg></div>
+                <div>Flutter (Android)<span class="gcp-service-detail">Riverpod state · GoRouter navigation</span></div>
+              </div>
+              <div class="gcp-service">
+                <div class="gcp-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 40 40"><rect width="24" height="24" rx="4" fill="#0D9488"/><path d="M8 12h8v8H8zM14 8h8v16h-8z" fill="#fff" opacity="0.8"/></svg></div>
+                <div>Firebase Hosting<span class="gcp-service-detail">This website at aarogyavault.live</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="gcp-layer">
+            <p class="gcp-layer-label">Backend Layer</p>
+            <div class="gcp-services">
+              <div class="gcp-service">
+                <div class="gcp-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="#4285F4"/></svg></div>
+                <div>Firebase Authentication<span class="gcp-service-detail">Google Sign-In · OAuth 2.0</span></div>
+              </div>
+              <div class="gcp-service">
+                <div class="gcp-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 40 40"><rect x="4" y="8" width="32" height="24" rx="3" fill="#FF6F00"/></svg></div>
+                <div>Cloud Firestore<span class="gcp-service-detail">Documents · OCR results · Waitlist</span></div>
+              </div>
+              <div class="gcp-service">
+                <div class="gcp-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 40 40"><path d="M8 8h24v24H8z" fill="#4285F4" opacity="0.2"/><path d="M12 16h16v2H12zm0 5h12v2H12z" fill="#4285F4"/></svg></div>
+                <div>Firebase Cloud Storage<span class="gcp-service-detail">Per-user document files · 10 MB limit</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="gcp-layer">
+            <p class="gcp-layer-label">Compute &amp; AI Layer</p>
+            <div class="gcp-services">
+              <div class="gcp-service">
+                <div class="gcp-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="#4285F4"/><path d="M20 14v6l4 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+                <div>Cloud Functions (v2)<span class="gcp-service-detail">Storage trigger · Node.js runtime</span></div>
+              </div>
+              <div class="gcp-service">
+                <div class="gcp-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 40 40"><path d="M20 4l-2 7h-7l6 4-2 7 5-4 5 4-2-7 6-4h-7z" fill="#8E75FF"/></svg></div>
+                <div>Google Gemini API<span class="gcp-service-detail">Gemini 2.5 Flash · Medical OCR</span></div>
+              </div>
+              <div class="gcp-service">
+                <div class="gcp-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 40 40"><path d="M8 26c0-7 5-12 12-12s12 5 12 12" fill="#34A853"/><circle cx="20" cy="14" r="5" fill="#4285F4"/></svg></div>
+                <div>Google Cloud Platform<span class="gcp-service-detail">Underlying infrastructure for all services</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="gcp-footer fade-in"><strong>Why Google Cloud?</strong> Aarogya Vault is designed to scale on the same infrastructure that powers our AI workloads, authentication, storage, and serverless processing — a unified stack that grows from MVP to millions of users without re-architecting.</p>
+      </div>
+    </section>
+
+    <!-- Security -->
+    <section class="section" id="security" aria-labelledby="security-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Security &amp; Privacy</span>
+          <h2 id="security-heading" class="section-title">Your health data deserves protection</h2>
+          <p class="section-subtitle">Privacy by design — implemented in Firestore security rules and per-user storage paths, not just stated in a policy.</p>
+        </div>
+        <div class="security-grid fade-in">
+          <article class="security-card">
+            <div class="security-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+            <h3>Secure Authentication</h3>
+            <p>Firebase Auth with Google Sign-In. Every API call requires a valid authenticated session.</p>
+          </article>
+          <article class="security-card">
+            <div class="security-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Protected Storage</h3>
+            <p>Files stored in Firebase Cloud Storage under per-user paths. Data transmitted over TLS.</p>
+          </article>
+          <article class="security-card">
+            <div class="security-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <h3>Private User Records</h3>
+            <p>Firestore security rules ensure users can only access their own documents and data.</p>
+          </article>
+          <article class="security-card">
+            <div class="security-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+            <h3>User-Owned Data</h3>
+            <p>You retain ownership of your health records. We do not sell your personal data.</p>
+          </article>
+        </div>
+        <p class="security-note fade-in">Aarogya Vault is designed with privacy in mind. We do not make regulatory compliance claims. Always consult healthcare professionals for medical decisions.</p>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="section founder" id="founder" aria-labelledby="founder-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Founder</span>
+          <h2 id="founder-heading" class="section-title">Why Aarogya Vault exists</h2>
+          <p class="section-subtitle">Built by a founder who saw the problem firsthand — and chose Google Cloud to solve it at scale.</p>
+        </div>
+        <div class="founder-story fade-in">
+          <div class="founder-profile">
+            <div class="founder-avatar" aria-hidden="true">AK</div>
+            <h3>Amrit Kumar</h3>
+            <p class="founder-role">Founder &amp; CEO, Aarogya Vault</p>
+            <p class="founder-location">India · Healthcare AI · Digital Health</p>
+          </div>
+          <div class="founder-narrative">
+            <p>Across India, patients collect stacks of lab reports, prescriptions, and discharge summaries from different hospitals and diagnostic labs — yet have no single place to store, search, or understand them. When a family member needed repeated explanations of blood test results, the gap became personal: medical documents are written for clinicians, not patients.</p>
+            <div class="founder-highlight">
+              <p>"I built Aarogya Vault because healthcare data belongs to the individual — not scattered across paper files and hospital portals. By combining Firebase's secure infrastructure with Gemini AI's document understanding, we can give every person ownership and clarity over their own medical history."</p>
+            </div>
+            <p>Amrit founded Aarogya Vault as a bootstrapped AI healthcare startup focused on the Indian market — choosing Google Cloud and Firebase as the production foundation from day one. The name <em>Aarogya</em> (आरोग्य) means health in Hindi, reflecting the mission to make healthcare document management accessible to every Indian household.</p>
+            <p>Today, the MVP is live: a Flutter app on Android, a serverless OCR pipeline on Cloud Functions, and Gemini-powered medical summaries — built to scale on the same Google infrastructure powering the next phase of growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="section" id="vision" aria-labelledby="vision-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Vision</span>
+          <h2 id="vision-heading" class="section-title">Where we're headed</h2>
+        </div>
+        <p class="vision-statement fade-in">"To become the personal health record layer for the next billion people."</p>
+        <div class="roadmap-grid fade-in">
+          <article class="roadmap-phase active">
+            <p class="roadmap-phase-num">Phase 1</p>
+            <h3>Document Vault</h3>
+            <p>Secure upload, storage, OCR, and AI summaries for individual medical records.</p>
+            <span class="roadmap-status current">MVP Live</span>
+          </article>
+          <article class="roadmap-phase">
+            <p class="roadmap-phase-num">Phase 2</p>
+            <h3>AI Health Insights</h3>
+            <p>Trend analysis, health patterns, and proactive document intelligence.</p>
+            <span class="roadmap-status planned">Planned</span>
+          </article>
+          <article class="roadmap-phase">
+            <p class="roadmap-phase-num">Phase 3</p>
+            <h3>Family Health Management</h3>
+            <p>Shared vaults for managing records across family members.</p>
+            <span class="roadmap-status planned">Planned</span>
+          </article>
+          <article class="roadmap-phase">
+            <p class="roadmap-phase-num">Phase 4</p>
+            <h3>Healthcare Ecosystem Integrations</h3>
+            <p>Connect with hospitals, labs, and digital health platforms.</p>
+            <span class="roadmap-status planned">Planned</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Waitlist -->
+    <section class="section waitlist" id="waitlist" aria-labelledby="waitlist-heading">
+      <div class="container">
+        <div class="waitlist-card fade-in">
+          <h2 id="waitlist-heading">Join the Waitlist</h2>
+          <p>Join the beta waitlist for early access to the Android app. We are onboarding users as we move from MVP to public launch.</p>
+          <form id="waitlist-form" class="waitlist-form" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" maxlength="100">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" maxlength="254">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" id="waitlist-submit">Join Waitlist</button>
+            <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+              <rect width="36" height="36" rx="10" fill="#0D9488"/>
+              <path d="M18 10v16M12 16h12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            Aarogya Vault
+          </div>
+          <p>AI healthcare startup — healthcare document management with Gemini AI medical OCR. Built on Google Cloud &amp; Firebase.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#mvp-status">MVP Status</a></li>
+            <li><a href="#founder">About</a></li>
+            <li><a href="#gemini">Gemini AI</a></li>
+            <li><a href="#platform">Platform</a></li>
+            <li><a href="#waitlist">Waitlist</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@aarogyavault.live">hello@aarogyavault.live</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aarogya Vault. All rights reserved.</span>
+        <span>Made in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script type="module" src="/js/waitlist.js"></script>
+</body>
+</html>

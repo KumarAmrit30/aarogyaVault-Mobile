@@ -22,5 +22,22 @@ service cloud.firestore {
         && request.auth.uid ==
            request.resource.data.ownerId;
     }
+
+    // Website waitlist — public create only, no reads
+    match /waitlist/{entryId} {
+      allow create: if
+        request.resource.data.keys().hasAll(['name', 'email', 'createdAt', 'source'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 2
+        && request.resource.data.name.size() <= 100
+        && request.resource.data.email is string
+        && request.resource.data.email.size() >= 5
+        && request.resource.data.email.size() <= 254
+        && request.resource.data.email.matches('.*@.*\\..*')
+        && request.resource.data.source == 'website'
+        && request.resource.data.createdAt == request.time;
+
+      allow read, update, delete: if false;
+    }
   }
 }
