@@ -12,7 +12,7 @@ class LoginScreen extends ConsumerWidget {
     ref.listen(authStateChangesProvider, (previous, next) {
       next.whenData((user) {
         if (user != null && context.mounted) {
-          context.go('/dashboard');
+          context.go('/home');
         }
       });
     });

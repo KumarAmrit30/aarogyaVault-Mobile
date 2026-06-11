@@ -14,7 +14,7 @@ class SplashScreen extends ConsumerWidget {
           return;
         }
         if (isAuthenticated) {
-          context.go('/dashboard');
+          context.go('/home');
         } else {
           context.go('/login');
         }
