@@ -5,5 +5,6 @@ import 'package:mobile_app/features/ocr/domain/repositories/ocr_repository.dart'
 
 final ocrRepositoryProvider = Provider<OcrRepository>((ref) {
   final firestore = ref.watch(firestoreProvider);
-  return FirestoreOcrRepository(firestore);
+  final storage = ref.watch(firebaseStorageProvider);
+  return FirestoreOcrRepository(firestore, storage);
 });

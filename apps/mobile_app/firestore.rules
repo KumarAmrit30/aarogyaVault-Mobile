@@ -23,6 +23,17 @@ service cloud.firestore {
            request.resource.data.ownerId;
     }
 
+    // OCR metadata — written by Cloud Functions, read by document owner
+    match /ocr_results/{documentId} {
+
+      allow read:
+        if request.auth != null
+        && get(/databases/$(database)/documents/documents/$(documentId))
+           .data.ownerId == request.auth.uid;
+
+      allow write: if false;
+    }
+
     // Website waitlist — public create only, no reads
     match /waitlist/{entryId} {
       allow create: if

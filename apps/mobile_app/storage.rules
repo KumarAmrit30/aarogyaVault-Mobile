@@ -10,5 +10,16 @@ service firebase.storage {
         if request.auth != null
         && request.auth.uid == userId;
     }
+
+    // OCR full text — written by Cloud Functions, read by document owner
+    match /ocr-results/{documentId}/{allPaths=**} {
+
+      allow read:
+        if request.auth != null
+        && firestore.get(/databases/(default)/documents/documents/$(documentId))
+           .data.ownerId == request.auth.uid;
+
+      allow write: if false;
+    }
   }
 }
